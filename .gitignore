@@ -1,0 +1,22 @@
+# ignore Python compiled files
+__pycache__/
+*.pyc
+
+# ignore virtual environments
+venv/
+
+# ignore VSCode settings
+.vscode/
+
+# ignore keys
+.env
+
+# Ignore SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore general database dump files
+*.sql
+*.bak
+*.dump
