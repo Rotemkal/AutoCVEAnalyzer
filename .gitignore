@@ -15,8 +15,3 @@ venv/
 *.db
 *.sqlite
 *.sqlite3
-
-# Ignore general database dump files
-*.sql
-*.bak
-*.dump

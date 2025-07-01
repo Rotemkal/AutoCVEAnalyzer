@@ -32,9 +32,9 @@ The system uses two methods to identify automotive-relevant CVEs:
 Automatically scans for automotive-related terms including:
 - **Manufacturers**: `porsche`, `tesla`, `bmw`, `toyota`, `mercedes`,
 - **Systems**: `ecu`, `can bus`, `obd`, `infotainment`, `adas`, `telematics`
-- **Technologies**: `v2x`, `v2v`, `v2i`, `autonomous`, `battery management`
+- **Technologies**: `v2x`, `v2v`, `v2i`, `battery management`
 - **Suppliers**: `bosch`, `continental`, `denso`, `aptiv`, `valeo`
-- **Infrastructure**: `charging station`, `ev charger`, `fleet`
+- **Infrastructure**: `charging station`, `ev charger`
 
 ### 2. GPT-4 Analysis
 Sends CVE data to OpenAI for intelligent assessment of:
