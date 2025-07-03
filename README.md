@@ -91,7 +91,7 @@ The application provides an interactive menu with the following options:
 ### Example Workflow:
 1. Run `python main.py`
 2. Choose option 1 to add a CVE
-3. Enter CVE ID (format: CVE-YYYY-NNNN)
+3. Enter CVE ID
 4. System fetches data from NVD and analyzes with GPT-4
 5. Review results and confirm addition to database
 6. Use options 2 or 3 to view stored CVEs
@@ -120,6 +120,61 @@ The application automatically creates and manages a SQLite database (`autocve.db
 ### Optional:
 - **NVD API Key**: Recommended for higher rate limits (free from NIST)
 Without an NVD API key, the application still works but may hit rate limits with frequent use.
+
+---
+
+## 📸 Screenshots
+
+Since this project uses APIs that require paid access (such as OpenAI's GPT-4), the system cannot run fully without valid API keys. 
+To give a clear impression of how the system works, this repository includes screenshots that demonstrate typical results and usage examples.
+
+These visual examples show:
+- How CVEs are analyzed and classified
+- GPT decisions vs. manual overrides
+- Automotive detection logic in action
+
+---
+
+## 📸 CVE Case Examples
+
+These real-world examples demonstrate how the system classifies CVEs using both GPT-4 and keyword detection.
+
+### ✅ Automotive-related CVEs
+
+#### CVE‑2020‑5551
+- Classified as automotive
+- ![](cve_case_examples/cve_2020_5551_automotive_detected.png)
+
+#### CVE‑2024‑23957
+- Classified as automotive
+- ![](cve_case_examples/cve_2024_23957_automotive_detected.png)
+
+---
+
+### ❌ Not Automotive-related
+
+#### CVE‑2023‑34362
+- Correctly classified as **not** automotive
+- ![](cve_case_examples/cve_2023_34362_not_automotive.png)
+
+---
+
+### ⚠️ False Negative + Manual Override
+
+#### CVE‑2025‑5611
+- Misclassified by GPT-4
+- Manually identified and tagged as automotive
+- ![](cve_case_examples/cve_2025_5611_false_negative_manual_override.png)
+
+---
+
+### 🧪 System Queries
+
+#### List all CVEs
+![](cve_case_examples/query_list_all_cves.png)
+
+#### List only automotive CVEs
+![](cve_case_examples/query_list_automotive_cves.png)
 
 ---
 
