@@ -74,7 +74,7 @@ def add_cve():
         description = input("📄 Enter description manually: ")
         vendor, cvss_score, attack_vector, published_date = "Unknown", None, "Unknown", "Unknown"
     
-    # Analyze with GPT - FIXED: Only 2 return values
+    # Analyze with GPT
     print("\n🤖 Analyzing with GPT...")
     severity, relevance = analyze_cve_with_gpt(cve_id, description)
     
@@ -88,7 +88,7 @@ def add_cve():
             print("❌ CVE not added")
             return
     
-    # Save to database - FIXED: Removed iocs parameter
+    # Save to database
     save_cve_to_db(cve_id, description, severity, relevance, cvss_score, attack_vector, published_date, vendor)
 
 def show_analysis_results(vendor, severity, cvss_score, attack_vector, published_date, relevance):
