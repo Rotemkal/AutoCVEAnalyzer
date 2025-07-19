@@ -20,21 +20,21 @@ def analyze_cve_with_gpt(cve_id, description):
     if found_keywords:
         print(f"🎯 Found keywords: {found_keywords}")
     
-    # Analyze with GPT - IMPROVED PROMPT
+    # Analyze with GPT
     try:
         response = client.chat.completions.create(
             model="gpt-4", 
-            messages=[{ "role": "user", 
+            messages=[{ "role": "user",
             "content": f"""Analyze CVE {cve_id}: {description}
             is this cve can be related to automotives?
             Automotive = YES if involves:
-            - Car manufacturers (Tesla, BMW, Toyota, etc.)
-            - Auto suppliers (Bosch, Continental, Denso, etc.) 
+            - Car manufacturers (Porsche, Tesla, BMW, Toyota, etc.)
+            - Auto suppliers (Bosch, Continental, Denso, etc.)
             - Vehicle systems (ECU, CAN bus, infotainment, OBD)
             - Charging stations, diagnostic tools
 
             Severity based on exploitability + impact.
-            pay attention to this format!!!
+            pay attention to the format!!!
             Your answer format:
             Severity: Critical / High / Medium /Low / not enough information
             Automotive: Yes / No"""}], temperature=0.1)

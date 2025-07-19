@@ -28,7 +28,7 @@ def fetch_cve_details(cve_id):
         vendor = extract_vendor(cve)
 
         # Extract CVSS score and attack vector
-        cvss_score, attack_vector = get_cvss_score_and_vector(vuln)
+        cvss_score, attack_vector = extract_cvss_score_and_vector(vuln)
         
         # Extract published date, remove time part if present
         published_date = cve.get("published", "Unknown")
@@ -61,8 +61,9 @@ def extract_vendor(cve):
         return "Unknown"
     except Exception:
         return "Unknown"
-def get_cvss_score_and_vector(vuln):
-    """Extract CVSS score and attack vector from metrics - Updated with CVSS v4.0 support"""
+
+def extract_cvss_score_and_vector(vuln):
+    """Extract CVSS score and attack vector from metrics"""
     cvss_score, attack_vector = None, "Unknown"
     
     # Find metrics location

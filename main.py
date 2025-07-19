@@ -88,7 +88,6 @@ def add_cve():
             print("❌ CVE not added")
             return
     
-    # Save to database
     save_cve_to_db(cve_id, description, severity, relevance, cvss_score, attack_vector, published_date, vendor)
 
 def show_analysis_results(vendor, severity, cvss_score, attack_vector, published_date, relevance):
@@ -186,7 +185,7 @@ def main():
     init_db()
     
     while True:
-        # show mein menu
+        # show main menu
         show_header()
 
         choice = input("\n🎯 Choose option (1-4): ").strip()
